@@ -1,14 +1,21 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import './styles/customStyles.css';
+import Home from './components/screens/Home';
+import About from './components/screens/About';
+import MyWork from './components/screens/MyWork';
 function App() {
   return (
     <>
-      <div className='w-full h-full bg-black justify-center items-center flex'>
-        <div className='flex flex-col items-center justify-center'>
-          <h3 className='text-custom'>Hello World</h3>
-          <h1 className='text-custom'>My Name is Krishan</h1>
-        </div>
-      </div>
+      <h1>Header</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/work' element={<MyWork />} />
+        </Routes>
+      </BrowserRouter>
+      <h1>Footer</h1>
     </>
   )
 }
