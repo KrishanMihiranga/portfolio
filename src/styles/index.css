@@ -1,0 +1,11 @@
+@font-face{
+    font-family: 'GeistRegular';
+    src: url('../assets/fonts/Geist_Regular.otf') format('opentype');
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('opentype');
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

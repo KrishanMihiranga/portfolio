@@ -1,3 +1,6 @@
 .text-custom{
     @apply text-blue-500 text-base font-bold;
 }
+.text-regular{
+    @apply font-GeistRegular tracking-wider font-medium text-gray-400 text-xl
+}
