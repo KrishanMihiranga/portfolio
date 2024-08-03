@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="flex mb-4 space-x-4 md:mb-0">
                     <Link to="/" className="text-lg text-regular hover:text-white">HOME</Link>
                     <Link to="/about" className="text-lg text-regular hover:text-white">ABOUT</Link>
-                    <Link to="/" className="text-lg text-regular hover:text-white">STORY</Link>
+                    <Link to="/story" className="text-lg text-regular hover:text-white">STORY</Link>
                     <Link to="/work" className="text-lg text-regular hover:text-white">WORK</Link>
                     <Link to="/" className="text-lg text-regular hover:text-white">CONTACT</Link>
                 </div>

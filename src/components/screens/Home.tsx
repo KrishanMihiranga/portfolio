@@ -1,6 +1,7 @@
 import '../../styles/customStyles.css'
 import { FaGithub, FaLinkedin, FaArrowRight, FaInstagram } from 'react-icons/fa';
 import profileImage from '../../assets/images/profilemain.png';
+import bg from '../../assets/images/bg.png';
 import WhiteButton from '../screenComponents/WhiteButton';
 import { Link } from 'react-router-dom';
 
