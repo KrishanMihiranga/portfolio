@@ -1,17 +1,19 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="p-4 fixed bottom-0 w-full border-t border-gray-500 border-dashed bg-black">
-            <div className="mx-10 flex flex-col md:flex-row justify-between items-center">
-                <div className="flex space-x-4 mb-4 md:mb-0">
-                    <a href="#" className="text-regular text-lg hover:text-white">CONTACT</a>
-                    <a href="#" className="text-regular text-lg hover:text-white">ABOUT</a>
-                    <a href="#" className="text-regular text-lg hover:text-white">PRIVACY POLICY</a>
-                    <a href="#" className="text-regular text-lg hover:text-white">TERMS & CONDITIONS</a>
+        <footer className="fixed bottom-0 w-full p-4 bg-black border-t border-gray-500 border-dashed">
+            <div className="flex flex-col items-center justify-between mx-10 md:flex-row">
+                <div className="flex mb-4 space-x-4 md:mb-0">
+                    <Link to="/" className="text-lg text-regular hover:text-white">HOME</Link>
+                    <Link to="/about" className="text-lg text-regular hover:text-white">ABOUT</Link>
+                    <Link to="/" className="text-lg text-regular hover:text-white">STORY</Link>
+                    <Link to="/work" className="text-lg text-regular hover:text-white">WORK</Link>
+                    <Link to="/" className="text-lg text-regular hover:text-white">CONTACT</Link>
                 </div>
-                <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-                    <div className="text-center md:text-left text-regular text-lg">&copy; 2024 KRISHAN. All rights reserved.</div>
+                <div className="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+                    <div className="text-lg text-center md:text-left text-regular">&copy; 2024 KRISHAN. All rights reserved.</div>
                     <div className="flex space-x-4">
                         <a href="https://github.com/KrishanMihiranga" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                             <FaGithub size={25} />

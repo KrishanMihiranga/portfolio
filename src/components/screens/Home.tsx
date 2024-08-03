@@ -2,6 +2,7 @@ import '../../styles/customStyles.css'
 import { FaGithub, FaLinkedin, FaArrowRight, FaInstagram } from 'react-icons/fa';
 import profileImage from '../../assets/images/profilemain.png';
 import WhiteButton from '../screenComponents/WhiteButton';
+import { Link } from 'react-router-dom';
 
 function Home() {
   // const navigate = useNavigate();
@@ -29,7 +30,7 @@ function Home() {
               </a>
             </div>
           </div>
-          <div className='mt-4 text-xl cursor-pointer text-regular hover:text-white'>DIVE INTO MY CODE WORLD HERE</div>
+          <div className='mt-4 text-xl cursor-pointer text-regular hover:text-white'><Link to='/about'>DIVE INTO MY CODE WORLD HERE</Link></div>
           <hr className='mt-5 border-t border-dashed border-t-gray-500' />
           <div className='mt-5 text-xl text-regular'>CURIOUS ABOUT ME ? GRAB MY RESUME</div>
           <div className='mt-5'>

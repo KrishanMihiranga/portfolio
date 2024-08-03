@@ -9,15 +9,17 @@ import Footer from './components/screenComponents/Footer';
 function App() {
   return (
     <>
-      <NavBar />
+
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/work' element={<MyWork />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
+
     </>
   )
 }
