@@ -22,8 +22,8 @@ const Footer = () => {
                     <Link to="/work" className={classNames('text-lg text-regular hover:text-white', {
                         'text-white': currentPath === '/work',
                     })}>WORK</Link>
-                    <Link to="/" className={classNames('text-lg text-regular hover:text-white', {
-                        'text-white': currentPath === '/',
+                    <Link to="/contact" className={classNames('text-lg text-regular hover:text-white', {
+                        'text-white': currentPath === '/contact',
                     })}>CONTACT</Link>
                     
                 </div>

@@ -7,6 +7,7 @@ import MyWork from './components/screens/MyWork';
 import NavBar from './components/screenComponents/NavBar';
 import Footer from './components/screenComponents/Footer';
 import Story from './components/screens/Story';
+import Contact from './components/screens/Contact';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/work' element={<MyWork />} />
           <Route path='/story' element={<Story />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
         <Footer />
       </BrowserRouter>
