@@ -8,6 +8,7 @@ export default {
       fontFamily:{
         GeistRegular:['GeistRegular','sans-serif'],
         Poppins:['Poppins','sans-serif'],
+        ArabicSignature:['ArabicSignature','sans-serif']
       }
     },
   },

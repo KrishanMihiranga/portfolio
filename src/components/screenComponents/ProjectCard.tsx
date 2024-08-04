@@ -15,6 +15,22 @@ import card2 from '../../assets/images/card2.png';
 import login from '../../assets/images/login.png';
 import checkbox from '../../assets/images/checkbox.png';
 import { FaJs, FaGithub, FaReact, FaNodeJs, FaLinkedin, FaAngleRight } from 'react-icons/fa6';
+import { RefObject, useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+type Project = {
+    url: string;
+    date: string;
+    name: string;
+    links: {
+        github: string;
+        linkedin: string;
+    };
+    description: string;
+    techStack: string[];
+};
 
 const getIconComponent = (iconName: string) => {
     switch (iconName) {
@@ -29,7 +45,7 @@ const getIconComponent = (iconName: string) => {
     }
 };
 
-const projectsData = [
+const projectsData: Project[] = [
     {
         url: kicks,
         date: 'April 09, 2024',
@@ -120,7 +136,7 @@ const projectsData = [
     },
 ];
 
-const otherProjects = [
+const otherProjects: Project[] = [
     {
         url: inrow,
         date: 'Aug 03, 2024',
@@ -190,9 +206,42 @@ const otherProjects = [
 ]
 
 const ProjectCard = () => {
+    const refs = useRef<(HTMLDivElement | null)[]>([]);
+    const wroktop: RefObject<HTMLDivElement> = useRef(null);
+
+    useLayoutEffect(() => {
+        const worktop = wroktop.current;
+
+        gsap.fromTo(worktop,
+            { opacity: 0, y: "+=30" },
+            {
+                opacity: 1, duration: 1, y: "0",
+                scrollTrigger: {
+                    trigger: worktop,
+                    start: "top bottom",
+                    end: "bottom top",
+                }
+            }
+        );
+
+        refs.current.forEach((ref) => {
+            gsap.fromTo(ref,
+                { opacity: 0, y: "+=30" },
+                {
+                    opacity: 1, duration: 1, y: "0",
+                    scrollTrigger: {
+                        trigger: ref,
+                        start: "top bottom",
+                        end: "bottom top",
+                    }
+                }
+            );
+        });
+
+    }, []);
     return (
         <>
-            <div className="flex flex-col items-center justify-center w-full px-32 my-10 mt-28">
+            <div className="flex flex-col items-center justify-center w-full px-32 my-10 mt-28" ref={wroktop}>
                 <div className="flex flex-row items-center justify-between w-full p-6 border border-gray-600 rounded-lg shadow-lg">
                     <div className="flex flex-col pr-8">
                         <h2 className="text-6xl text-regular ">Awarded Project</h2>
@@ -208,10 +257,9 @@ const ProjectCard = () => {
                 </div>
             </div>
 
-
             <div className='flex flex-wrap justify-center gap-10'>
                 {projectsData.map((project, index) => (
-                    <div className='max-w-sm' key={index}>
+                    <div className='max-w-sm' key={index} ref={el => refs.current[index] = el}>
                         <div>
                             <img src={project.url} alt="project Image" className='max-w-sm rounded-lg' />
                         </div>
@@ -240,46 +288,46 @@ const ProjectCard = () => {
             <hr className='mx-20 my-20 border-t border-dashed border-t-gray-500' />
 
             <div className='flex flex-wrap justify-center gap-10 pb-10 mt-10'>
-                {
-                    otherProjects.map((project, index) => (
-                        <div key={index} className='flex flex-col p-5 text-gray-500 border border-gray-600 rounded-lg shadow-lg max-w-s sm:max-w-sm md:max-w-md lg:max-w-lg'>
-                            <div className='flex flex-row'>
-                                <div className='flex-shrink-0 w-32 mr-4 overflow-hidden border border-gray-500 rounded-lg'>
-                                    <img src={project.url} alt="other_project_image" className='object-cover w-full h-full' />
-                                </div>
-                                <div className='flex flex-col justify-between'>
-                                    <div className='flex flex-row items-center justify-between text-2xl text-white text-regular'>
-                                        {project.name}
-                                        <div className='flex flex-row mt-2 space-x-2 text-gray-500'>
-                                            {project.techStack.map((tech, index) => (
-                                                <div key={index}>{getIconComponent(tech)}</div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <p className='text-sm text-gray-500'>{project.description}</p>
-                                </div>
+                {otherProjects.map((project, index) => (
+                    <div key={index} className='flex flex-col p-5 text-gray-500 border border-gray-600 rounded-lg shadow-lg max-w-s sm:max-w-sm md:max-w-md lg:max-w-lg' ref={el => refs.current[projectsData.length + index] = el}>
+                        <div className='flex flex-row'>
+                            <div className='flex-shrink-0 w-32 mr-4 overflow-hidden border border-gray-500 rounded-lg'>
+                                <img src={project.url} alt="other_project_image" className='object-cover w-full h-full' />
                             </div>
-                            <div className='flex flex-row justify-between mt-3'>
-                                <div>
-                                    <h1 className='text-sm text-gray-500'>{project.date}</h1>
+                            <div className='flex flex-col justify-between'>
+                                <div className='flex flex-row items-center justify-between text-2xl text-white text-regular'>
+                                    {project.name}
+                                    <div className='flex flex-row mt-2 space-x-2 text-gray-500'>
+                                        {project.techStack.map((tech, index) => (
+                                            <div key={index}>{getIconComponent(tech)}</div>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className='flex flex-row items-center gap-4'>
-                                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'>
-                                        <FaGithub size={25} />
-                                    </a>
-                                    <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'>
-                                        <FaLinkedin size={25} />
-                                    </a>
-                                </div>
+                                <p className='text-sm text-gray-500'>{project.description}</p>
                             </div>
                         </div>
-                    ))
-                }
+                        <div className='flex flex-row justify-between mt-3'>
+                            <div>
+                                <h1 className='text-sm text-gray-500'>{project.date}</h1>
+                            </div>
+                            <div className='flex flex-row items-center gap-4'>
+                                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'>
+                                    <FaGithub size={25} />
+                                </a>
+                                <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'>
+                                    <FaLinkedin size={25} />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div className='flex flex-row items-center justify-end gap-1 px-20 mt-5 mb-20 cursor-pointer text-regular hover:text-white'><div><a href="https://github.com/KrishanMihiranga" target='_blank'>see more</a></div> <div><FaAngleRight /></div></div>
+            <div className='flex flex-row items-center justify-end gap-1 px-20 mt-5 mb-20 cursor-pointer text-regular hover:text-white'>
+                <div><a href="https://github.com/KrishanMihiranga" target='_blank'>see more</a></div>
+                <div><FaAngleRight /></div>
+            </div>
             <div className='text-transparent'>Hello</div>
         </>
-
     );
 };
 

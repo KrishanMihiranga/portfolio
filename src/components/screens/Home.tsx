@@ -1,39 +1,64 @@
 import '../../styles/customStyles.css'
-import { FaGithub, FaLinkedin, FaArrowRight, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaArrowRight, FaInstagram, FaCodepen } from 'react-icons/fa';
 import profileImage from '../../assets/images/profilemain.png';
 import WhiteButton from '../screenComponents/WhiteButton';
 import { Link } from 'react-router-dom';
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 function Home() {
-  // const navigate = useNavigate();
+  const comp = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const t1 = gsap.timeline()
+      t1.from("#intro-slider", {
+        opacity:0,
+      }).from(["#title-1","#title-2","#title-3","#title-4","#title-5","#title-6","#title-7","#title-8","#title-9",], {
+        opacity: 0,
+        y: "+=30",
+        stagger:0.1,
+      }).from(["#social-1","#social-2","#social-3","#social-4"], {
+        opacity: 0,
+        x: "-=30",
+        stagger: 0.1,
+      })
+    }, comp)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className='flex flex-col justify-center w-full h-full px-4'>
-      <div className='flex flex-row items-center justify-between mx-10'>
+    <div className='flex flex-col justify-center w-full h-full px-4' ref={comp}>
+      <div className='flex flex-row items-center justify-between mx-10' id='intro-slider'>
         <div className='text-white'>
           <div className='flex flex-col gap-2'>
-            <div className="text-6xl font-bold tracking-wider text-white font-Poppins">What's up, Visionaries</div>
-            <div className="text-5xl font-bold tracking-wider text-white font-Poppins">It's me</div>
-            <div className="text-6xl font-bold tracking-wider text-white font-Poppins">Krishan Mihiranga</div>
+            <div className="text-6xl font-bold tracking-wider text-white font-Poppin" id='title-1'>What's up, Visionaries</div>
+            <div className="text-5xl font-bold tracking-wider text-white font-Poppins" id='title-2'>It's me</div>
+            <div className="text-6xl font-bold tracking-wider text-white font-Poppins" id='title-3'>Krishan Mihiranga</div>
           </div>
-          <div className='mt-5 text-gray-500 font-[500] text-lg'>Front-End Maven | Shaping code since 19' | DM for a byte of conversation</div>
-          <div className='flex flex-row items-center gap-3 mt-4 text-xl text-regular'>
+          <div className='mt-5 text-gray-500 font-[500] text-lg' id='title-4'>Front-End Maven | Shaping code since 19' | DM for a byte of conversation</div>
+          <div className='flex flex-row items-center gap-3 mt-4 text-xl text-regular' id='title-5'>
             <div>FIND ME ON </div>
             <div className='flex flex-row gap-2'>
-              <a href="https://github.com/KrishanMihiranga" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+              <a href="https://github.com/KrishanMihiranga" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-1'>
                 <FaGithub size={22} />
               </a>
-              <a href="https://www.linkedin.com/in/krishanmb/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/in/krishanmb/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-2'>
                 <FaLinkedin size={22} />
               </a>
-              <a href="https://www.instagram.com/krishanm404?igsh=Z3psdmNiYjRoanE3" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+              <a href="https://www.instagram.com/krishanm404?igsh=Z3psdmNiYjRoanE3" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-3'>
                 <FaInstagram size={23} />
+              </a>
+              <a href="https://codepen.io/mkrishan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-4'>
+                <FaCodepen size={23} />
               </a>
             </div>
           </div>
-          <div className='mt-4 text-xl cursor-pointer text-regular hover:text-white'><Link to='/about'>DIVE INTO MY CREATIVE WORLD HERE</Link></div>
-          <hr className='mt-5 border-t border-dashed border-t-gray-500' />
-          <div className='mt-5 text-xl text-regular'>CURIOUS ABOUT ME ? GRAB MY RESUME</div>
-          <div className='mt-5'>
+          <div className='mt-4 text-xl cursor-pointer text-regular hover:text-white ' id='title-6'><Link to='/work'>DIVE INTO MY CREATIVE WORLD HERE</Link></div>
+          <hr className='mt-5 border-t border-dashed border-t-gray-500' id='title-7'/>
+          <div className='mt-5 text-xl text-regular' id='title-8'>CURIOUS ABOUT ME ? GRAB MY RESUME</div>
+          <div className='mt-5' id='title-9'>
             <WhiteButton onClick={() => alert('Hola')}>
               {
                 <div className='flex items-center'>RESUME <FaArrowRight style={{ marginLeft: '5px', fontSize: '13px' }} /></div>

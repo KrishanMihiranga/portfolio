@@ -6,6 +6,10 @@
     font-family: 'Poppins';
     src: url('../assets/fonts/Poppins-Regular.ttf') format('opentype');
 }
+@font-face{
+    font-family: 'ArabicSignature';
+    src: url('../assets/fonts/Arabic-L3nv5.otf') format('opentype');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

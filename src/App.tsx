@@ -8,10 +8,11 @@ import NavBar from './components/screenComponents/NavBar';
 import Footer from './components/screenComponents/Footer';
 import Story from './components/screens/Story';
 import Contact from './components/screens/Contact';
+import PreLoader from './components/screenComponents/loaders/PreLoader';
 function App() {
   return (
     <>
-
+    <PreLoader />
       <BrowserRouter>
         <NavBar />
         <Routes>
