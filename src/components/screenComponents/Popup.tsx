@@ -1,6 +1,9 @@
-import React from 'react';
+interface PopupProps {
+  imageSrc: string; 
+  onClose: () => void; 
+}
 
-const Popup = ({ imageSrc, onClose }) => {
+const Popup: React.FC<PopupProps> = ({ imageSrc, onClose }) => {
   if (!imageSrc) return null;
 
   return (

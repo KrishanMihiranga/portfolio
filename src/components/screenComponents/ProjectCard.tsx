@@ -14,8 +14,7 @@ import card from '../../assets/images/card.png';
 import card2 from '../../assets/images/card2.png';
 import login from '../../assets/images/login.png';
 import checkbox from '../../assets/images/checkbox.png';
-import { FaJs, FaGithub, FaReact, FaNodeJs, FaLinkedin } from 'react-icons/fa6';
-import { FaAngleRight, FaArrowRight } from 'react-icons/fa';
+import { FaJs, FaGithub, FaReact, FaNodeJs, FaLinkedin, FaAngleRight } from 'react-icons/fa6';
 
 const getIconComponent = (iconName: string) => {
     switch (iconName) {

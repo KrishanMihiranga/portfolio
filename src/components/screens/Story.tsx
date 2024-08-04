@@ -9,14 +9,14 @@ import Popup from '../screenComponents/Popup';
 import { FaCircle } from 'react-icons/fa';
 
 const Story = () => {
-    const [popupImage, setPopupImage] = useState(null);
+    const [popupImage, setPopupImage] = useState('');
 
     const handleImageClick = (src:any) => {
         setPopupImage(src);
     };
 
     const handleClosePopup = () => {
-        setPopupImage(null);
+        setPopupImage('');
     };
 
     return (
