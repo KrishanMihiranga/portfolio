@@ -31,7 +31,7 @@ function Home() {
               </a>
             </div>
           </div>
-          <div className='mt-4 text-xl cursor-pointer text-regular hover:text-white'><Link to='/about'>DIVE INTO MY CODE WORLD HERE</Link></div>
+          <div className='mt-4 text-xl cursor-pointer text-regular hover:text-white'><Link to='/about'>DIVE INTO MY CREATIVE WORLD HERE</Link></div>
           <hr className='mt-5 border-t border-dashed border-t-gray-500' />
           <div className='mt-5 text-xl text-regular'>CURIOUS ABOUT ME ? GRAB MY RESUME</div>
           <div className='mt-5'>

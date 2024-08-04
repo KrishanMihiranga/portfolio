@@ -23,7 +23,7 @@ const Story = () => {
         <div className="flex flex-col w-full px-4 mt-32">
             <div className="flex flex-col items-center justify-center h-full px-4 mx-10">
                 <div className="text-3xl text-regular">My Journey</div>
-                <div className="text-5xl text-regular">Do waht you love, love what you do</div>
+                <div className="text-5xl text-regular">Do what you love, love what you do</div>
             </div>
             <div className="flex flex-row items-start justify-around h-full p-10 mx-10 mt-10 text-white px-28">
                 <div>
