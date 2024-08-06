@@ -69,24 +69,31 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center w-full h-screen text-white" ref={comp}>
-      <div className='flex flex-row items-center justify-center px-24'>
-        <div className='flex flex-col items-center w-full gap-4 text-center'>
-          <div className="tracking-wider text-white text-9xl font-ArabicSignature" id='cfn'>Krishan</div>
-          <div className="tracking-wider text-white text-9xl font-ArabicSignature" id='cln'>Mihiranga</div>
-          <div className='text-xl text-regular' id='crole'>Fullstack Developer</div>
-          <div className='flex flex-row gap-4 text-3xl text-gray-500'>
-            <div id='cs1'><FaGithub className='cursor-pointer hover:text-white' aria-label="GitHub" /></div>
-            <div id='cs2'><FaInstagram className='cursor-pointer hover:text-white' aria-label="Instagram" /></div>
-            <div id='cs3'><FaLinkedin className='cursor-pointer hover:text-white' aria-label="LinkedIn" /></div>
-            <div id='cs4'><FaWhatsapp className='cursor-pointer hover:text-white' aria-label="WhatsApp" /></div>
-            <div id='cs5'><FaEnvelope className='cursor-pointer hover:text-white' aria-label="Email" /></div>
+    <div className="flex flex-col justify-center w-full px-4 text-white mt-28 pb-36 md:px-24 md:h-screen" ref={comp}>
+      <div className="flex flex-col items-center justify-center w-full h-full gap-10 md:flex-row">
+        {/* Personal Information Section */}
+        <div className="flex flex-col items-center w-full gap-4 text-center md:w-1/2">
+          <div className="text-6xl tracking-wider text-white md:text-9xl font-ArabicSignature" id="cfn">
+            Krishan
           </div>
-          <div className='text-base text-gray-500 w-[80%] md:w-[60%]' id='cdesc'>
+          <div className="text-6xl tracking-wider text-white md:text-9xl font-ArabicSignature" id="cln">
+            Mihiranga
+          </div>
+          <div className="text-xl text-regular" id="crole">Fullstack Developer</div>
+          <div className="flex flex-row gap-4 text-2xl text-gray-500 md:text-3xl">
+            <div id="cs1"><FaGithub className='cursor-pointer hover:text-white' aria-label="GitHub" /></div>
+            <div id="cs2"><FaInstagram className='cursor-pointer hover:text-white' aria-label="Instagram" /></div>
+            <div id="cs3"><FaLinkedin className='cursor-pointer hover:text-white' aria-label="LinkedIn" /></div>
+            <div id="cs4"><FaWhatsapp className='cursor-pointer hover:text-white' aria-label="WhatsApp" /></div>
+            <div id="cs5"><FaEnvelope className='cursor-pointer hover:text-white' aria-label="Email" /></div>
+          </div>
+          <div className="text-base text-gray-500 w-full md:w-[80%]" id="cdesc">
             Software Engineering Undergrad, aspiring Full-Stack Developer. Building a versatile skill set for a dynamic tech future. Connect with me!
           </div>
         </div>
-        <div className="flex items-center justify-center w-[80%] ">
+        
+        {/* Contact Form Section */}
+        <div className="flex items-center justify-center w-full md:w-1/2">
           <form onSubmit={handleSubmit} className="w-full p-4 md:p-8">
             <div className="mb-4">
               <input
@@ -97,7 +104,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 className={`w-full p-3 bg-transparent border rounded-lg focus:outline-none focus:ring-2 focus:ring-white ${errors.name ? 'border-red-600' : 'border-gray-600'}`}
                 aria-label="Name"
-                id='cin'
+                id="cin"
               />
               {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
             </div>
@@ -110,7 +117,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 className={`w-full p-3 bg-transparent border rounded-lg focus:outline-none focus:ring-2 focus:ring-white ${errors.email ? 'border-red-600' : 'border-gray-600'}`}
                 aria-label="Email"
-                id='cie'
+                id="cie"
               />
               {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
             </div>
@@ -123,7 +130,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 className={`w-full p-3 bg-transparent border rounded-lg focus:outline-none focus:ring-2 focus:ring-white ${errors.subject ? 'border-red-600' : 'border-gray-600'}`}
                 aria-label="Subject"
-                id='cis'
+                id="cis"
               />
               {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject}</p>}
             </div>
@@ -135,7 +142,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 className={`w-full h-32 p-3 bg-transparent border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-white ${errors.message ? 'border-red-600' : 'border-gray-600'}`}
                 aria-label="Message"
-                id='cim'
+                id="cim"
               />
               {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
             </div>
@@ -143,7 +150,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 className="w-full px-5 py-3 text-lg tracking-widest text-black bg-white rounded-md bg-opacity-80 hover:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-white font-GeistRegular"
-                id='cib'
+                id="cib"
               >
                 Send Message
               </button>
@@ -153,6 +160,7 @@ const Contact: React.FC = () => {
       </div>
     </div>
   );
+  
 }
 
 export default Contact;

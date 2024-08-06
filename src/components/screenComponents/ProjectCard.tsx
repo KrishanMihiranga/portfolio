@@ -241,18 +241,18 @@ const ProjectCard = () => {
     }, []);
     return (
         <>
-            <div className="flex flex-col items-center justify-center w-full px-32 my-10 mt-28" ref={wroktop}>
-                <div className="flex flex-row items-center justify-between w-full p-6 border border-gray-600 rounded-lg shadow-lg">
-                    <div className="flex flex-col pr-8">
-                        <h2 className="text-6xl text-regular ">Awarded Project</h2>
+            <div className="flex flex-col items-center justify-center w-full px-4 my-10 md:px-32 mt-28" ref={wroktop}>
+                <div className="flex flex-col items-center justify-between w-full p-6 border border-gray-600 rounded-lg shadow-lg md:flex-row">
+                    <div className="flex flex-col pr-0 mb-4 md:pr-8 md:mb-0">
+                        <h2 className="text-4xl md:text-6xl text-regular ">Awarded Project</h2>
                         <div className='mb-2 blinking-text'>Under Development</div>
                         <p className="text-gray-400">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae autem incidunt cumque dignissimos consectetur veritatis nihil optio. Nisi amet laborum nulla dolor aperiam quo? Velit in nam asperiores sint atque?
                         </p>
                     </div>
-                    <div className="flex justify-end w-1/2 space-x-4">
-                        <img src={hopess} alt="hope" className="object-cover w-1/2 rounded-md" />
-                        <img src={hope} alt="hope" className="object-contain w-1/3 rounded-md" />
+                    <div className="flex flex-col justify-end w-full space-y-4 md:flex-row md:w-1/2 md:space-y-0 md:space-x-4">
+                        <img src={hopess} alt="hope" className="object-cover w-full rounded-md md:w-1/2" />
+                        <img src={hope} alt="hope" className="object-contain w-full rounded-md md:w-1/3" />
                     </div>
                 </div>
             </div>
@@ -322,7 +322,8 @@ const ProjectCard = () => {
                     </div>
                 ))}
             </div>
-            <div className='flex flex-row items-center justify-end gap-1 px-20 mt-5 mb-20 cursor-pointer text-regular hover:text-white'>
+            
+            <div className='flex flex-row items-center justify-end gap-1 px-5 mt-5 cursor-pointer md:px-20 mb-36 text-regular hover:text-white'>
                 <div><a href="https://github.com/KrishanMihiranga" target='_blank'>see more</a></div>
                 <div><FaAngleRight /></div>
             </div>
