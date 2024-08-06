@@ -123,5 +123,5 @@
 }
 .customText:hover {
   color: #00f3ff;
-  animation: change 5s linear infinite;
+  animation: change 3s linear infinite;
 }

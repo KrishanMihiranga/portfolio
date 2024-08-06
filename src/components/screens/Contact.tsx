@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
       const t1 = gsap.timeline()
       const t2 = gsap.timeline()
 
-      t1.from(["#cfn", "#cln", "#crole", "#cs1", "#cs2", "#cs3", "#cs4", "#cs5", "#cdesc",], {
+      t1.from(["#cfn", "#cln", "#crole", "#cmail", "#cs1", "#cs2", "#cs3", "#cs4", "#cs5", "#cdesc",], {
         opacity: 0,
         y: "+=30",
         stagger: 0.1,
@@ -60,13 +60,45 @@ const Contact: React.FC = () => {
     return !Object.values(newErrors).some(error => error);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (validate()) {
-      // Handle form submission
       console.log('Form submitted:', formData);
+
+      const formDataObject = new FormData();
+      formDataObject.append('name', formData.name);
+      formDataObject.append('email', formData.email);
+      formDataObject.append('subject', formData.subject);
+      formDataObject.append('message', formData.message);
+
+      try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwrxOo1RH7hXm2LBIFBiV0UNOxoEJ9gc6tyza6pYKQbM5HvAZoAMgbfY0xYAdE0U7jP/exec', {
+          method: 'POST',
+          body: formDataObject,
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.text(); 
+        console.log('Success:', result);
+
+        
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
   };
+
+
 
   return (
     <div className="flex flex-col justify-center w-full px-4 text-white mt-28 pb-36 md:px-24 md:h-screen" ref={comp}>
@@ -80,18 +112,19 @@ const Contact: React.FC = () => {
             Mihiranga
           </div>
           <div className="text-xl text-regular" id="crole">Fullstack Developer</div>
+          <div className='text-sm text-gray-500 ' id='cmail'>mkrishan2003@gmail.com</div>
           <div className="flex flex-row gap-4 text-2xl text-gray-400 md:text-3xl">
-            <div id="cs1"><FaGithub className='cursor-pointer customText' aria-label="GitHub" /></div>
-            <div id="cs2"><FaInstagram className='cursor-pointer customText' aria-label="Instagram" /></div>
-            <div id="cs3"><FaLinkedin className='cursor-pointer customText' aria-label="LinkedIn" /></div>
-            <div id="cs4"><FaWhatsapp className='cursor-pointer customText' aria-label="WhatsApp" /></div>
-            <div id="cs5"><FaEnvelope className='cursor-pointer customText' aria-label="Email" /></div>
+            <a id="cs1" href='https://github.com/KrishanMihiranga' target='_blank'><FaGithub className='cursor-pointer customText' aria-label="GitHub" /></a>
+            <a id="cs2" href='https://www.instagram.com/krishanm404?igsh=Z3psdmNiYjRoanE3' target='_blank'><FaInstagram className='cursor-pointer customText' aria-label="Instagram" /></a>
+            <a id="cs3" href='https://www.linkedin.com/in/krishanmb/' target='_blank'><FaLinkedin className='cursor-pointer customText' aria-label="LinkedIn" /></a>
+            <a id="cs4" href='https://wa.me/+94774512029' target='_blank'><FaWhatsapp className='cursor-pointer customText' aria-label="WhatsApp" /></a>
+            <a id="cs5" href='mailto:mkrishan2003@gmail.com' target='_blank'><FaEnvelope className='cursor-pointer customText' aria-label="Email" /></a>
           </div>
           <div className="text-base text-gray-500 w-full md:w-[80%]" id="cdesc">
             Software Engineering Undergrad, aspiring Full-Stack Developer. Building a versatile skill set for a dynamic tech future. Connect with me!
           </div>
         </div>
-        
+
         {/* Contact Form Section */}
         <div className="flex items-center justify-center w-full md:w-1/2">
           <form onSubmit={handleSubmit} className="w-full p-4 md:p-8">
@@ -160,7 +193,7 @@ const Contact: React.FC = () => {
       </div>
     </div>
   );
-  
+
 }
 
 export default Contact;
