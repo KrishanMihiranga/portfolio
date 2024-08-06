@@ -135,7 +135,7 @@ const projectsData: Project[] = [
             github: 'https://github.com/KrishanMihiranga/instagram-clone',
             link: 'https://www.linkedin.com/feed/',
             linkedin: '',
-            drive: '',
+            drive: 'https://drive.google.com/file/d/1RY0WT7WXM0C7ZjSBYUueRc9AOQP_1OKG/view?usp=sharing',
         },
         description: `Explore my Instagram clone mobile app built with React Native. Featuring only the UI, it's styled using NativeWind for a sleek and modern look, offering a visually stunning experience.`,
         techStack: ['FaReact', 'SiExpo', 'SiTypescript', 'SiTailwindcss'],
@@ -377,7 +377,7 @@ const ProjectCard = () => {
                                             ) :
                                                 social === 'FaDownload' ? (
 
-                                                    <a key={index} href={project.links.drive} target='_blank' className='cursor-pointer customText'>{getIconComponent(social)}</a>
+                                                    <a key={index} href={project.links.drive} target='_blank' download={true} className='cursor-pointer customText'>{getIconComponent(social)}</a>
                                                 ) : null
                                 ))}
                             </div>
