@@ -269,8 +269,8 @@ const ProjectCard = () => {
                         <div className='flex flex-row items-center justify-between px-2 text-2xl text-regular'>
                             <div className='text-white'>{project.name}</div>
                             <div className='flex flex-row gap-2'>
-                                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'><FaGithub size={25} /></a>
-                                <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'><FaGithub size={25} /></a>
+                                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className='cursor-pointer customText'><FaGithub size={25} /></a>
+                                <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className='cursor-pointer customText'><FaGithub size={25} /></a>
                             </div>
                         </div>
                         <div className='px-2 mt-1 mb-2 text-sm'>
@@ -311,10 +311,10 @@ const ProjectCard = () => {
                                 <h1 className='text-sm text-gray-500'>{project.date}</h1>
                             </div>
                             <div className='flex flex-row items-center gap-4'>
-                                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'>
+                                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className='cursor-pointer customText'>
                                     <FaGithub size={25} />
                                 </a>
-                                <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className='cursor-pointer hover:text-white'>
+                                <a href={project.links.linkedin} target="_blank" rel="noopener noreferrer" className='cursor-pointer customText'>
                                     <FaLinkedin size={25} />
                                 </a>
                             </div>
@@ -323,7 +323,7 @@ const ProjectCard = () => {
                 ))}
             </div>
             
-            <div className='flex flex-row items-center justify-end gap-1 px-5 mt-5 cursor-pointer md:px-20 mb-36 text-regular hover:text-white'>
+            <div className='flex flex-row items-center justify-end gap-1 px-5 mt-5 cursor-pointer md:px-20 mb-36 text-regular customText'>
                 <div><a href="https://github.com/KrishanMihiranga" target='_blank'>see more</a></div>
                 <div><FaAngleRight /></div>
             </div>

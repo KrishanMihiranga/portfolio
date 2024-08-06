@@ -85,7 +85,7 @@ const Testimonial: React.FC = () => {
                             </div>
                         </div>
                         <a href={testimonial.url} target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin size={22} className="text-gray-500 cursor-pointer hover:text-white" />
+                            <FaLinkedin size={22} className="text-gray-500 cursor-pointer customText" />
                         </a>
                     </div>
                     <div className="text-gray-300">

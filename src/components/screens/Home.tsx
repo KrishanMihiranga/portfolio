@@ -41,21 +41,22 @@ function Home() {
           <div className='flex flex-row items-center gap-3 mt-2 text-sm md:mt-4 md:text-xl text-regular' id='title-5'>
             <div>FIND ME ON </div>
             <div className='flex flex-row gap-2'>
-              <a href="https://github.com/KrishanMihiranga" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-1'>
+              <a href="https://github.com/KrishanMihiranga" target="_blank" rel="noopener noreferrer" className="customText" id='social-1'>
                 <FaGithub size={22} />
               </a>
-              <a href="https://www.linkedin.com/in/krishanmb/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-2'>
+
+              <a href="https://www.linkedin.com/in/krishanmb/" target="_blank" rel="noopener noreferrer" className="customText" id='social-2'>
                 <FaLinkedin size={22} />
               </a>
-              <a href="https://www.instagram.com/krishanm404?igsh=Z3psdmNiYjRoanE3" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-3'>
+              <a href="https://www.instagram.com/krishanm404?igsh=Z3psdmNiYjRoanE3" target="_blank" rel="noopener noreferrer" className="customText" id='social-3'>
                 <FaInstagram size={23} />
               </a>
-              <a href="https://codepen.io/mkrishan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white" id='social-4'>
+              <a href="https://codepen.io/mkrishan" target="_blank" rel="noopener noreferrer" className="customText" id='social-4'>
                 <FaCodepen size={23} />
               </a>
             </div>
           </div>
-          <div className='mt-2 text-sm cursor-pointer md:mt-4 md:text-xl text-regular hover:text-white ' id='title-6'><Link to='/work'>DIVE INTO MY CREATIVE WORLD HERE</Link></div>
+          <div className='mt-2 text-sm cursor-pointer md:mt-4 md:text-xl text-regular customText ' id='title-6'><Link to='/work'>DIVE INTO MY CREATIVE WORLD HERE</Link></div>
           <hr className='mt-2 border-t border-dashed md:mt-5 border-t-gray-500' id='title-7' />
           <div className='mt-2 text-sm md:mt-5 md:text-xl text-regular' id='title-8'>CURIOUS ABOUT ME ? GRAB MY RESUME</div>
           <div className='mt-2 md:mt-5' id='title-9'>

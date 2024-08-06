@@ -80,12 +80,12 @@ const Contact: React.FC = () => {
             Mihiranga
           </div>
           <div className="text-xl text-regular" id="crole">Fullstack Developer</div>
-          <div className="flex flex-row gap-4 text-2xl text-gray-500 md:text-3xl">
-            <div id="cs1"><FaGithub className='cursor-pointer hover:text-white' aria-label="GitHub" /></div>
-            <div id="cs2"><FaInstagram className='cursor-pointer hover:text-white' aria-label="Instagram" /></div>
-            <div id="cs3"><FaLinkedin className='cursor-pointer hover:text-white' aria-label="LinkedIn" /></div>
-            <div id="cs4"><FaWhatsapp className='cursor-pointer hover:text-white' aria-label="WhatsApp" /></div>
-            <div id="cs5"><FaEnvelope className='cursor-pointer hover:text-white' aria-label="Email" /></div>
+          <div className="flex flex-row gap-4 text-2xl text-gray-400 md:text-3xl">
+            <div id="cs1"><FaGithub className='cursor-pointer customText' aria-label="GitHub" /></div>
+            <div id="cs2"><FaInstagram className='cursor-pointer customText' aria-label="Instagram" /></div>
+            <div id="cs3"><FaLinkedin className='cursor-pointer customText' aria-label="LinkedIn" /></div>
+            <div id="cs4"><FaWhatsapp className='cursor-pointer customText' aria-label="WhatsApp" /></div>
+            <div id="cs5"><FaEnvelope className='cursor-pointer customText' aria-label="Email" /></div>
           </div>
           <div className="text-base text-gray-500 w-full md:w-[80%]" id="cdesc">
             Software Engineering Undergrad, aspiring Full-Stack Developer. Building a versatile skill set for a dynamic tech future. Connect with me!
