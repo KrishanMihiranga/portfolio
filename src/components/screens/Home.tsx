@@ -60,7 +60,7 @@ function Home() {
           <hr className='mt-2 border-t border-dashed md:mt-5 border-t-gray-500' id='title-7' />
           <div className='mt-2 text-sm md:mt-5 md:text-xl text-regular' id='title-8'>CURIOUS ABOUT ME ? GRAB MY RESUME</div>
           <div className='mt-2 md:mt-5' id='title-9'>
-            <WhiteButton onClick={() => alert('Hola')}>
+            <WhiteButton downloadUrl="../../assets/cv/Kishan Mhiranga-SE-CV.pdf">
               {
                 <div className='flex items-center'>RESUME <FaArrowRight style={{ marginLeft: '5px', fontSize: '13px' }} /></div>
               }
