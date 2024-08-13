@@ -12,10 +12,10 @@ const NavBar: React.FC = () => {
     }, []);
 
     return (
-        <nav className="fixed top-0 z-10 w-full p-4 bg-black border-b shadow-lg border-b-gray-500">
+        <nav className="fixed top-0 left-0 z-10 w-full p-4 bg-black border-b shadow-lg border-b-gray-500">
             <div className="flex items-center justify-between mx-4 md:mx-10">
                 <div className="text-sm text-regular md:text-lg">{currentDate}, SRI LANKA</div>
-                <div className="hidden text-xl font-bold tracking-wider text-white md:text-2xl md:block font-Poppins">Portfolio</div>
+                <div className="hidden text-xl font-bold tracking-wider text-white md:text-2xl md:block font-Poppins">SyntaXage</div>
                 <img src={profileImage} alt="Profile" className="w-8 h-8 border-2 border-gray-500 rounded-full md:w-10 md:h-10" />
             </div>
         </nav>
