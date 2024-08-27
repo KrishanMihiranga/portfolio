@@ -112,13 +112,13 @@ const Contact: React.FC = () => {
             Mihiranga
           </div>
           <div className="text-xl text-regular" id="crole">Fullstack Developer</div>
-          <div className='text-sm text-gray-500 ' id='cmail'>mkrishan2003@gmail.com</div>
+          <div className='text-sm text-gray-500 ' id='cmail'>krishanmdev@gmail.com</div>
           <div className="flex flex-row gap-4 text-2xl text-gray-400 md:text-3xl">
             <a id="cs1" href='https://github.com/KrishanMihiranga' target='_blank'><FaGithub className='cursor-pointer customText' aria-label="GitHub" /></a>
             <a id="cs2" href='https://www.instagram.com/krishanm404?igsh=Z3psdmNiYjRoanE3' target='_blank'><FaInstagram className='cursor-pointer customText' aria-label="Instagram" /></a>
             <a id="cs3" href='https://www.linkedin.com/in/krishanmb/' target='_blank'><FaLinkedin className='cursor-pointer customText' aria-label="LinkedIn" /></a>
             <a id="cs4" href='https://wa.me/+94774512029' target='_blank'><FaWhatsapp className='cursor-pointer customText' aria-label="WhatsApp" /></a>
-            <a id="cs5" href='mailto:mkrishan2003@gmail.com' target='_blank'><FaEnvelope className='cursor-pointer customText' aria-label="Email" /></a>
+            <a id="cs5" href='mailto:krishanmdev@gmail.com' target='_blank'><FaEnvelope className='cursor-pointer customText' aria-label="Email" /></a>
           </div>
           <div className="text-base text-gray-500 w-full md:w-[80%]" id="cdesc">
             Software Engineering Undergrad, aspiring Full-Stack Developer. Building a versatile skill set for a dynamic tech future. Connect with me!
